@@ -1,26 +1,26 @@
 <!DOCTYPE html>
 <html lang="ru">
 <head>
-<title>Документ без названия</title>
+<title>Test API</title>
 
 <script type="text/javascript">
-    async function getCourse() { // Функция объявлена как async
+    async function getCourse() { 
         try {
-            let response = await fetch("https://belarusbank.by/api/kurs_cards", { mode: 'no-cors' });
+            let response = await fetch("https://belarusbank.by/api/kurs_cards");
             if (response.ok) {
                 let data = await response.json();
                 console.log(data);
             } else {
-                console.error("Ошибка при загрузке данных:", response.status);
+                console.error("Not OK", response.status);
             }
         } catch (error) {
-            console.error("Произошла ошибка:", error);
+            console.error("Error", error);
         }
     }
-    getCourse(); // Вызов функции
+    getCourse();
 </script>
 </head>
 <body>
-Контент
+Api Test
 </body>
 </html>
