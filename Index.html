@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<title>Документ без названия</title>
+
+<script type="text/javascript">
+    async function getCourse() { // Функция объявлена как async
+        try {
+            let response = await fetch("https://belarusbank.by/api/kurs_cards", { mode: 'no-cors' });
+            if (response.ok) {
+                let data = await response.json();
+                console.log(data);
+            } else {
+                console.error("Ошибка при загрузке данных:", response.status);
+            }
+        } catch (error) {
+            console.error("Произошла ошибка:", error);
+        }
+    }
+    getCourse(); // Вызов функции
+</script>
+</head>
+<body>
+Контент
+</body>
+</html>
